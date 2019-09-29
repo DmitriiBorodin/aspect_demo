@@ -1,5 +1,7 @@
-package com.example.aspect.controller;
+package com.example.aspect.aspect;
 
+import com.example.aspect.service.UserIdHolder;
+import com.example.aspect.dto.UserIdAware;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -17,7 +19,7 @@ public class MyAspect {
 
     private final UserIdHolder userIdHolder;
 
-    @Around("@annotation(com.example.aspect.controller.LocalUserId)")
+    @Around("@annotation(com.example.aspect.aspect.LocalUserId)")
     public Object surround(ProceedingJoinPoint joinPoint) throws Throwable {
         Long id = getIdFromArgs(joinPoint);
         log.info("store local user");

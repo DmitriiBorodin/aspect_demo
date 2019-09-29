@@ -1,4 +1,4 @@
-package com.example.aspect.controller;
+package com.example.aspect.dto;
 
 public interface UserIdAware {
 
